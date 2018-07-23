@@ -8,8 +8,32 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
+<script>
+    const array = [3, 'a', 'a', 'a', 2, 3, 'a', 3, 'a', 2, 4, 9, 3];
+    array.sort();
+    console.log(array);
+    var counter = 0;
+    var max_counter = 0;
+    var max_el;
+    for (var i = 1; i < array.length; i++) {
+        if (array[i] == array [i-1]){
+            counter++;
+            console.log(i + " " + counter);
+        } 
+        else {
+            if (counter > max_counter) {
+                max_counter = counter;
+                max_el = array[i];
+            }
+            counter = 0;
+        }
+    }
+    console.log("Max occuring el is " + max_el);
+</script>
     <h1>Hello World!</h1> 
     <p>World is beautiful</p>
     <p>I dont like you</p>
 </body>
+
+
 </html>
