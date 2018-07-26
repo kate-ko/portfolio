@@ -1,0 +1,33 @@
+<html>
+<script>
+    const array = [3, 'a', 'a', 'a', 2, 3, 'a', 3, 'a', 2, 4, 9, 3];
+    array.sort(); // Sorting array
+    var counter = 0; // variable for counting occurence
+    var max_counter = 0; // current maximum occurence
+    var max_el; // element with current maximum occurence
+
+	// Looping over array
+    for (var i = 1; i < array.length; i++) {
+        // counting consequent equivalent elements in row
+        if (array[i] == array [i-1]){
+        counter++;
+        }
+        // when met element different to the previous one
+        else {
+        // checking if current counter is more than previous max counter
+            if (counter > max_counter) {
+                max_counter = counter;
+             max_el = array[i];
+                }
+        counter = 0;
+        }
+    }
+
+    // Checking if the last element in sorted array has the max occurence
+	if (counter > max_counter) {
+        max_counter = counter;
+        max_el = array[i-1];// last element of array
+    }
+    console.log("Max occuring el is " + max_el);
+</script>
+</html>
