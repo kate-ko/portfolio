@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+</head>
+
+<body>
+</body>
+<script>
+    var pumpFuel = function() {
+        this.fuel += 1;
+    };
+
+    var airplane = {
+        fuel: 0,
+        fly: function() {
+            if (this.fuel < 2) {
+                return 'on the ground!';
+            }
+            else {
+                return 'flying!';
+            }
+        },
+        pumpFuel: pumpFuel
+    };
+    console.log('The plane should not be able to fly (yet): ' + airplane.fly());
+
+    airplane.pumpFuel();
+    console.log('The plane should STILL not be able to fly: ' + airplane.fly());
+
+    airplane.pumpFuel();
+    airplane.pumpFuel();
+    console.log('Can it fly now? ' + airplane.fly());
+
+</script>
+
+</html>

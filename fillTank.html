@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+</head>
+
+<body>
+</body>
+<script>
+    function pump(amount) {
+        this.liters += amount;
+        console.log('You put ' + amount + ' liters in ' + this.name);
+    };
+
+    var garage = {
+        car1: {
+            name: 'Audi',
+            liters: 3,
+            fillTank: function (amount) {
+                this.liters += amount;
+                console.log('You put ' + amount + ' liters in ' + this.name);
+            }
+        },
+        car2: {
+            name: 'Mercedes',
+            liters: 1,
+            fillTank: function (amount) {
+                this.liters += amount;
+                console.log('You put ' + amount + ' liters in ' + this.name);
+            }
+        }
+    };
+
+    garage.car1.fillTank(2);
+    console.log('Audi should have 5 liters: ', garage.car1.liters);
+
+    garage.car2.fillTank(30);
+    console.log('Mercedes should have 31 liters: ', garage.car2.liters);
+</script>
+
+</html>

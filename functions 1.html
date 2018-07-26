@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Kate </title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+</body>
+<script>
+    function convertWeight(weight, base) {
+        if (typeof weight != "number") {
+            console.log("Error in the first parameter. Number expected");
+            if (typeof (base) != "string") {
+                console.log("Error in the second parameter. String expected");
+                return;
+            }
+            return;
+        }
+        if (typeof (base) != "string") {
+            console.log("Error in the second parameter. String expected");
+            return;
+        }
+        if (base == "kilo") {
+            return weight * 2.2;
+        } else if (base == "pound") {
+            return weight * 0.45;
+        } else {
+            return 0;
+        }
+    }
+
+    function calcAge(birthYear) {
+        var d = new Date();
+        let age = d.getFullYear() - birthYear;
+        console.log("Your age is either " + age + " or " + (age - 1));
+    }
+
+    function isPrime(num) {
+        let i = Math.floor(num / 2);// We can only check numbers from the middle 
+        while (num % i != 0 && i > 1) {
+            i--;
+        }
+        if (i == 1) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    function avg(array) {
+        return array.reduce((total, amount) => total + amount)/array.length;
+    }
+
+    function ifExists(array, num) {
+        if (array.includes(num)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    function printBelowNum(array, num) {
+        for (let el of array) {
+            if (el < num) {
+                console.log(el);
+            }
+        }
+    }
+
+
+    array = [1,2,3,4,5];
+    console.log(ifExists(array, 5), ifExists(array, 10));
+    printBelowNum(array, 3);
+    
+</script>
+
+</html>
